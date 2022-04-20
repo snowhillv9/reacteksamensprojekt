@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 import reactDom from "react-dom";
 
-reactDom.render(
-  (
- <>
 
- </>
-  ),
-  document.getElementById("root")
+reactDom.render(
+<>
+    
+</>,
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
