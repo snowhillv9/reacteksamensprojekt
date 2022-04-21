@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+const SequenceMemory =() =>{
+    const handleClick = () =>{
+        console.log("starting game");
+    } 
+   return (
+    <div className="SequenceMemory">
+        <button onClick={handleClick}>Start game</button>
+    </div>
+   ); 
+}
 
-let squareArray = [0,1,2,3,4,5,6,7,8];
 
-let memoryArray = [];
-
-let squareToAdd = Math.floor(Math.random() * 9);
-
-memoryArray.push(squareToAdd);
+export default SequenceMemory;
