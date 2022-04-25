@@ -2,25 +2,29 @@ import About from "./about";
 import Home from "./Home";
 import React from 'react'
 import Minigames from "./Minigames";
+import Test from "./test";
 import "./App.css";
 import Nav from "./nav";
-import {BrowserRouter as Router, Link, Route} from'react-router-dom';
+import {BrowserRouter, BrowserRouter as Router, Link, Route} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 
 
-function App(){
+const Application = () =>{
     return(
         <>
-       <Router>
+        <BrowserRouter>
+       <Routes>
            <div className="App">
                <Nav/>
-           <Route path='/' element={<Home/>} />
-           <Route path='/About' element={<About/>} />
-           <Route path='/Minigames' element={<Minigames/>} />
+           <Route path="/" element={<Home/>} />
+           <Route path="/About" element={<About/>} />
+           <Route path="/Minigames" element={<Minigames/>} />
+           <Route path="/Test" element={<Test/>} />
            </div>
-       </Router>
+       </Routes>
+       </BrowserRouter>
        </>
     );
 }
 
-export default App;
+export default Application;
