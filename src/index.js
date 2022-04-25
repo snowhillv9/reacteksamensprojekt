@@ -1,10 +1,11 @@
 import React from "react";
 import reactDom from "react-dom";
+import SequenceMemory from "./sequenceMemory";
 
 
 reactDom.render(
 <>
-    
+    <SequenceMemory/>
 </>,
     document.getElementById("root")
 );
