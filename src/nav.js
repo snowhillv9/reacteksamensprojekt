@@ -8,7 +8,7 @@ function Nav(){
     }
     return (
        <nav>
-           <h3>Test</h3>
+           <h3>Home Page</h3>
                <ul className='nav-links'>
                    <Link style={navStyle} to='Home'>
                    <li>Home</li>
