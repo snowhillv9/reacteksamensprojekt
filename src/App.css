@@ -9,7 +9,7 @@ nav{
     background: rgb(73,79,82);
     color: white
 }
-.nav-lkinks{
+.nav-links{
     width: 50%;
     display: flex;
     justify-content: space-around;
