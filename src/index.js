@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Application from "./Application";
-import Nav from "./nav";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
