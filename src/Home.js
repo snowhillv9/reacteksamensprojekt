@@ -1,14 +1,16 @@
 import React from 'react';
-import mig from "./mig.jpg"
+import { useNavigate } from 'react-router-dom'; 
+import Nav from './nav';
 
 const Home = () =>{
+
+    let navigate = useNavigate();
+
     return(
+    
         <div>
-            <h1>Home</h1>
-            <div className="logo">
-          <img src={mig} width="100" height="50" />
-        </div>
-           
+            <Nav/>
+            <h1><button onClick={()=>{navigate("/")}}>Go back to home page </button></h1>       
         </div>
     )
 }
