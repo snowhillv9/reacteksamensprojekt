@@ -1,13 +1,23 @@
 import React from 'react';
-import mig from "./mig.jpg"
+import Nav from "./nav";
+import "./Button.css"
 
 const Minigames = () =>{
     return(
         <div>
+            <Nav/>
             <h1>Minigames</h1>
-            <div className="logo">
-          <img src={mig} width="100" height="50" />
-        </div>
+            <div className='button-grid'>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            </div>
         </div>
     )
 }
