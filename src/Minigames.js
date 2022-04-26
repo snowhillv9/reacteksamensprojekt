@@ -2,10 +2,9 @@ import React from 'react';
 import Nav from "./nav";
 import "./Button.css"
 
-const Minigames = () =>{
+export default function Minigames (){
     return(
         <div>
-            <Nav/>
             <h1>Minigames</h1>
             <div className='button-grid'>
             <button>1</button>
@@ -22,4 +21,3 @@ const Minigames = () =>{
     )
 }
 
-export default Minigames;
