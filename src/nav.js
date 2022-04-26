@@ -14,6 +14,7 @@ function Nav(){
                 <li><Link to="Home">Home</Link></li>
                 <li><Link to="About">About</Link></li>
                 <li><Link to="Minigames">Minigames</Link></li>
+                <li><Link to="ErrorPage">*</Link></li>
                </ul>  
        </nav>
     )
