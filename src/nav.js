@@ -10,15 +10,10 @@ function Nav(){
        <nav>
            <h3>Home Page</h3>
                <ul className='nav-links'>
-                   <Link style={navStyle} to='Home'>
-                   <li>Home</li>
-                   </Link>
-                   <Link style={navStyle} to="About">
-                   <li>About</li>
-                   </Link>
-                   <Link style={navStyle} to="Minigames">
-                   <li>Minigames</li>
-                   </Link>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="Home">Home</Link></li>
+                <li><Link to="About">About</Link></li>
+                <li><Link to="Minigames">Minigames</Link></li>
                </ul>  
        </nav>
     )

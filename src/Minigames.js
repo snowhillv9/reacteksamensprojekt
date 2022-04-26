@@ -1,18 +1,11 @@
 import React from 'react';
 import Nav from "./nav";
 import "./Button.css"
-import { useNavigate } from 'react-router-dom';
 
-const Minigames = () =>{
-    let navigate = useNavigate();
-
+export default function Minigames (){
     return(
         <div>
-            <Nav/>
             <h1>Minigames</h1>
-            <div>
-            <h1> <button onClick={()=>{navigate("/")}}>Go back to home page </button></h1>       
-        </div>
             <div className='button-grid'>
             <button>1</button>
             <button>2</button>
@@ -28,4 +21,3 @@ const Minigames = () =>{
     )
 }
 
-export default Minigames;

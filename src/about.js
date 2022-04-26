@@ -1,18 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Nav from './nav';
+import Nav from "./nav";
+import mig from "./mig.jpg";
 
-
-export default function About(){
-    let navigate = useNavigate();
+export default function About() {
     return (
         <div>
-            <Nav/>
             <h1>About</h1>
-            <div>
-            <h1><button onClick={()=>{navigate("/")}}>Go back to home page </button></h1>       
+            <div className="billedeAfSoren">
+          <img src={mig} width="100" height="50" />
+          </div>
         </div>
-        </div>
-    )
+        
+    );
 }
-
