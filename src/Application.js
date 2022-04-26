@@ -21,11 +21,11 @@ const Application = () =>{
               </ul>
             </div>
             <Routes>
-              <Route exact path="/" element={<h1>Home Page</h1>} />
-              <Route exact path="/Home" element={<Home/>} />
-              <Route exact path="/About" element={<About/>} />
-              <Route exact path="/Minigames" element={<Minigames/>} />
-              <Route exact path="/*" element={<ErrorPage/>} />
+              <Route path="/" element={<h1>Home Page</h1>} />
+              <Route path="/Home" element={<Home/>} />
+              <Route path="/About" element={<About/>} />
+              <Route path="/Minigames" element={<Minigames/>} />
+              <Route path="/*" element={<ErrorPage/>} />
             </Routes>
             
           </Router>
