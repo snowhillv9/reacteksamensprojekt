@@ -27,5 +27,9 @@
         outline: none;
         background: white;
     }
+
+    .button-grid > button:hover {
+        background: rgb(138, 134, 134);
+    }
     
  
