@@ -6,6 +6,7 @@ import "./App.css";
 import Nav from "./nav";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
+import ErrorPage from "./ErrorPage";
 
 
 const Application = () =>{
@@ -24,6 +25,7 @@ const Application = () =>{
               <Route exact path="/Home" element={<Home/>} />
               <Route exact path="/About" element={<About/>} />
               <Route exact path="/Minigames" element={<Minigames/>} />
+              <Route exact path="/*" element={<ErrorPage/>} />
             </Routes>
             
           </Router>
