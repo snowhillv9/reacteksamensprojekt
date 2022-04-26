@@ -24,6 +24,7 @@ const Application = () =>{
               <Route exact path="/Home" element={<Home/>} />
               <Route exact path="/About" element={<About/>} />
               <Route exact path="/Minigames" element={<Minigames/>} />
+              
             </Routes>
             
           </Router>
