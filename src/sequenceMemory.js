@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Button.css"
 
 const SequenceMemory =() =>{
+
+    
     const [squaresToRemember,setSquares] = useState([]);
     const handleClick = () =>{
         console.log("starting game");
@@ -23,7 +25,43 @@ const SequenceMemory =() =>{
             </div>
     </div>
    ); 
+
+   function AppHooks() {
+    const buttonNames = [
+      {
+        namebutton: 1
+      },
+      {
+        namebutton: 2
+      },
+      {
+        namebutton: 3
+      },
+      {
+        namebutton: 4
+      },
+      {
+        namebutton: 5
+      },
+      {
+        namebutton: 6
+      },
+      {
+        namebutton: 7
+      },
+      {
+        namebutton: 8
+      },
+      {
+        namebutton: 9
+      },
+    ];
+   }
 }
+
+
+
+// }
 
 
 
