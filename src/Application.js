@@ -23,7 +23,7 @@ const Application = () =>{
             </div>
             <Routes>
               <Route path="/" element={<h1>Home Page</h1>} />
-              <Route path="/Home" element={<Home/>} />
+              <Route path="/Profile" element={<Home/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Minigames" element={<Minigames/>} />
               <Route path="/SequenceMemoryGame" element={<SequenceMemory/>} />

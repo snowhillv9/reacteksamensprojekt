@@ -7,6 +7,7 @@ export default function Minigames (){
 
     let navigate = useNavigate();
     return(
+        
         <div>
             <h1>Minigames</h1>
             <div> <button onClick={()=>{navigate("/SequenceMemoryGame")}}>To enter the squence memory game click here </button></div>
