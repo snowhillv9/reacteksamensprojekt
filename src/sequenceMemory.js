@@ -10,11 +10,19 @@ export default function SequenceMemory(targetEle){
     let btnele = "";
     let isRunning = false;
 
+    return (
+
+      <>
+      {render}
+      </>
+    )
+
     function _getRandomSquare() {
         let min = 0;
         let max = boxLength;
         return Math.floor(Math.random() * (max - min)) + min;
       }
+      
     function _blink(eleId, duration, idx = -1) {  //vi siger index -1, da et arrays størrelse altid går fra 0--> arrayets længde som f.eks i vores tilfælde vil gå fra 0-->8
         setTimeout(function () {
           let ele = document.getElementById(eleId);
@@ -104,20 +112,7 @@ function render() {
       tmpl += `<div class="box__item" id=${idx} data-idx = ${idx}></div>`; //Bruger $ operatoren for at have multiline string.
     }
     tmpl += "</div>";
-    targetEle.innerHTML = tmpl;
-
-    return {
-        render: render,
-        start: start,
-      };
+    targetEle.dangerouslySetInnerHTML = tmpl;
     }
-    let container = document.getElementById("root");
-    let sm = new SequenceMemory(container);
-    sm.render();
-
-    let btn = document.querySelector(".start__btn");
-    btn.addEventListener("click", function () {
-    sm.start(btn);
-    });
 }
   
