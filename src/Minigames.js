@@ -12,7 +12,7 @@ export default function Minigames (){
             <h1>Minigames</h1>
             <div> <button onClick={()=>{navigate("/SequenceMemoryGame")}}>To enter the squence memory game click here </button></div>
             <div className='button-grid'>
-            <button>1</button>
+            <button >1</button>
             <button>2</button>
             <button>3</button>
             <button>4</button>

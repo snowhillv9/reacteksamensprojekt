@@ -31,5 +31,10 @@
     .button-grid > button:hover {
         background: rgb(138, 134, 134);
     }
+
+    button:hover {
+        background-color: blue;
+        color: #fff;
+    }
     
  
