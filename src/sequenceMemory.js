@@ -18,6 +18,11 @@ export default function SequenceMemory(targetEle){
 
     <>
     <h1>XD XD XD</h1>
+    <main>
+      <div id="container"></div>
+      <br />
+      <button  className="start__btn">Start</button>
+    </main>
     {start}
     {render}
     </>
