@@ -8,6 +8,7 @@ import SequenceMemory from "./sequenceMemory";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
+import WatchWithHooks from "./watch";
 
 
 const Application = () =>{
