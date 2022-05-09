@@ -9,6 +9,7 @@ import MemoryGame from "./MemoryGame";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
+import ReactionTime from "./reactiontime";
 
 
 const Application = () =>{
@@ -27,6 +28,7 @@ const Application = () =>{
               <Route path="/Home" element={<Home/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Minigames" element={<Minigames/>} />
+              <Route path="/Reactiontime" element={<ReactionTime/>} />
               <Route path="/SequenceMemoryGame" element={<SequenceMemory/>} />
               <Route path="/MemoryGame" element={<MemoryGame/>} />
               <Route path="/*" element={<ErrorPage/>} />
