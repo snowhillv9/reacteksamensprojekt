@@ -3,7 +3,7 @@ import React, { useRef,useState, useEffect } from 'react';
 const Image = () => {
   const { height, width } = useWindowDimensions();
   const testStyles = useRef({
-      position: "absolute", width: Math.random*(width)},
+      position: "absolute", width: Math.random()*width,
       top: Math.floor(Math.random() * 50),
       left: "50%",
       transform: "translate(-50%, -50%)",
