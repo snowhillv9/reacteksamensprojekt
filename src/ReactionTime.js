@@ -1,12 +1,10 @@
 import React from 'react';
-import '.ReactionTime.css';
-import {useState} from "react";
+import './ReactionTime.css';
 
 
 
 
-export default function ReactionTime()
-{
+
     function getRandomColor() {
 				
         var letters = "0123456789ABCDEF".split('');
@@ -63,7 +61,6 @@ export default function ReactionTime()
         
         document.getElementById("printReactionTime").innerHTML="Your Reaction Time is: " + reactionTime + "seconds";
         
-        this.style.display="none";
         
         makeBox();
         
@@ -71,10 +68,15 @@ export default function ReactionTime()
     }
     
     makeBox(); 
+
+    export default function ReactionTime()
+{
     return(
-        <div>
-            
-        </div>
+        <h1>
+            <p>fuck my life</p>
+            <p id="printReactionTime"></p>
+            <div id="box"></div>
+        </h1>
     )
 
 }

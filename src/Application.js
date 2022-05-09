@@ -9,7 +9,7 @@ import MemoryGame from "./MemoryGame";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
-import ReactionTime from "./reactiontime";
+import ReactionTime from "./ReactionTime";
 
 
 const Application = () =>{
