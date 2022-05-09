@@ -2,9 +2,6 @@ import React from 'react';
 import './ReactionTime.css';
 
 
-
-
-
     function getRandomColor() {
 				
         var letters = "0123456789ABCDEF".split('');
