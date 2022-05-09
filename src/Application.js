@@ -4,7 +4,6 @@ import Minigames from "./Minigames";
 import React, { Fragment } from 'react'
 import "./App.css";
 import Nav from "./nav";
-import SequenceMemory from "./sequenceMemory";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
@@ -27,7 +26,6 @@ const Application = () =>{
               <Route path="/Home" element={<Home/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Minigames" element={<Minigames/>} />
-              <Route path="/SequenceMemoryGame" element={<SequenceMemory/>} />
               <Route path="/*" element={<ErrorPage/>} />
             </Routes>
             
