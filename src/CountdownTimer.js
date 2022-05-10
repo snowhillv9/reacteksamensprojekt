@@ -1,11 +1,40 @@
-import React from "react";
-import "./CountdownTimer.css";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import {getRemainingTimeUntilMsTimestamp} from "./CountDownTimerLogic";
 
-const CountdownTimer =()=>{
-    return(
+
+const defaultRemainingTime = {
+    miliseconds: '00',
+    seconds: '00',
+    minutes: '01',
+}
+
+
+
+const CountdownTimer =({countDownTimestampMS})=>{
+    const[remainingTime, setRemainingTime] = useState(defaultRemainingTime);
+
+    useEffect(()=>{
+      const intervalId = setInterval(() => {
+        updateRemainingtime(countDownTimestampMS);
+       },100); 
+
+       return () => clearInterval(intervalId); //stopper en løbende interval funktion
+    },[countDownTimestampMS]);
+
+
+
+    function updateRemainingtime(countdown){
+       setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
+    }
+    return (
         <div className="countdown-timer">
-            <span> 30 </span>
+            <span> {remainingTime.minutes} </span>
+            <span> minutes </span>
+            <span> {remainingTime.seconds} </span>
             <span> Seconds </span>
+            <span> {remainingTime.miliseconds} </span>
+            <span> miliseconds </span>
         </div>
     );
 }

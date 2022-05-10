@@ -1,11 +1,11 @@
 import React, { useRef,useState, useEffect } from 'react';
-import ButtonState from './buttonAimTrainCounter';
 
 const Image = () => {
   const { height, width } = useWindowDimensions();
+  const heightOffSet = 200;
   const testStyles = useRef({
       position: "absolute",
-      top: Math.floor(Math.random() * height),
+      top: Math.floor(Math.random() * (height-heightOffSet))+heightOffSet,
       left: Math.floor(Math.random()*width),
       transform: "translate(-50%, -50%)",
   });
