@@ -1,16 +1,19 @@
 import React, { useRef,useState, useEffect } from 'react';
+import ButtonState from './buttonAimTrainCounter';
 
 const Image = () => {
   const { height, width } = useWindowDimensions();
   const testStyles = useRef({
-      position: "absolute", width: Math.random()*width,
-      top: Math.floor(Math.random() * 50),
-      left: "50%",
+      position: "absolute",
+      top: Math.floor(Math.random() * height),
+      left: Math.floor(Math.random()*width),
       transform: "translate(-50%, -50%)",
   });
 
-  return <img src ="./target.png" style={testStyles.current} alt="" />;
+  return <img src ="./target.png" style={testStyles.current} className="Image" alt="" />;
 };
+
+
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
