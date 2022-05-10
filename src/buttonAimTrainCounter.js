@@ -10,7 +10,7 @@ const ButtonState = () =>{
       return(
         <div>
           {targetCounter}
-          <button><img src="Aimtrainer.PNG" alt="my image" onClick={increment}  /> Targets hit:</button>
+          <button onClick={increment}><Image/> Targets hit:</button>
         </div>
       )
     }
