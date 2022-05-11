@@ -8,9 +8,9 @@ export default function Home(){
         <div>
             <h1>Profile
             <ButtonState/>
+            
             </h1>   
-            <CountdownTimer/>
-            <Image/>     
+            <CountdownTimer countDownTimestampMS={1643673600000}/>   
         </div>
     )
 }

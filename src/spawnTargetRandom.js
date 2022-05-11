@@ -1,16 +1,26 @@
-import React, { useRef,useState, useEffect } from 'react';
+import React, {useState, useEffect,useReducer,useCallback } from 'react';
 
-const Image = () => {
+class Test {
+  static style;
+}
+
+export default function Image(){
   const { height, width } = useWindowDimensions();
+  const[clicked, setClicked] = useState(false);
+
   const heightOffSet = 200;
-  const testStyles = useRef({
+  Test.style =({
       position: "absolute",
       top: Math.floor(Math.random() * (height-heightOffSet))+heightOffSet,
       left: Math.floor(Math.random()*width),
       transform: "translate(-50%, -50%)",
   });
 
-  return <img src ="./target.png" style={testStyles.current} className="Image" alt="" />;
+  const handleClick = () => {
+    setClicked(!clicked);
+}
+
+  return <img src ="./target.png" style={Test.style} className="Image" onClick={handleClick} alt="" />;
 };
 
 
@@ -39,7 +49,5 @@ function getWindowDimensions() {
   return windowDimensions;
 }
 
-
- export default Image;
 
 

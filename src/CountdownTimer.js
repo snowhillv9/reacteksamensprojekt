@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import {getRemainingTimeUntilMsTimestamp} from "./CountDownTimerLogic";
 
-
 const defaultRemainingTime = {
     miliseconds: '00',
     seconds: '00',

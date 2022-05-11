@@ -9,7 +9,7 @@ export function getRemainingTimeUntilMsTimestamp(timestampMs){
         return{
             miliseconds: '000',
             seconds: '00',
-            minutes: '0'
+            minutes: '00'
         }
     }
 
