@@ -6,13 +6,14 @@ const ButtonState = () =>{
   
     const increment = () =>{
       setTargetCounter(targetCounter + 1);
+      console.log("xd")
       
     }
   
       return(
         <div>
-          {targetCounter}
-          <button onClick={increment}><Image/></button>
+         <h4> Targets hit: {targetCounter} </h4>
+          <Image onIncrementOnClick={increment}/>
         </div>
       )
     }

@@ -1,14 +1,15 @@
 import React, {useState, useEffect,useReducer,useCallback } from 'react';
 
+
 class Test {
   static style;
 }
 
-export default function Image(){
+export default function Image(props){
   const { height, width } = useWindowDimensions();
   const[clicked, setClicked] = useState(false);
-
-  const heightOffSet = 200;
+  
+  const heightOffSet = 230;
   Test.style =({
       position: "absolute",
       top: Math.floor(Math.random() * (height-heightOffSet))+heightOffSet,
@@ -18,6 +19,7 @@ export default function Image(){
 
   const handleClick = () => {
     setClicked(!clicked);
+    props.onIncrementOnClick();
 }
 
   return <img src ="./target.png" style={Test.style} className="Image" onClick={handleClick} alt="" />;
