@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "./spawnTargetRandom"
 import ButtonState from './buttonAimTrainCounter';
-import Counter from './CountdownTimer';
+import CountdownTimerApp from './CountdownTimer';
 
 export default function Home(){
     return(
@@ -9,7 +9,7 @@ export default function Home(){
             <h1>Profile
             <ButtonState/>
             </h1>   
-            <Counter/>   
+           <CountdownTimerApp/>
         </div>
     )
 }
