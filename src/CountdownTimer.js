@@ -95,7 +95,9 @@ function onClickResetBtn(){
 }
 return (
     <div>
-        {timer}
+
+        <h4>Time Remaining:{timer}</h4>
+     
       <button onClick={onClickResetBtn}>Start Game</button>
     </div>
     
