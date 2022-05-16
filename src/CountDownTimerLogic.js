@@ -15,23 +15,32 @@ export function getRemainingTimeUntilMsTimestamp(timestampMs){
 
     return {
         miliseconds: getRemainingMiliseconds(nowDayjs, timestampDayJS),
-        seconds: getRemainingMiliseconds(nowDayjs, timestampDayJS),
-        minutes: getRemainingMiliseconds(nowDayjs, timestampDayJS)
+        seconds: getRemainingSeconds(nowDayjs, timestampDayJS),
+        minutes: getRemainingMinutes(nowDayjs, timestampDayJS)
     }
 }
 
 function getRemainingMiliseconds(nowDayjs, timestampDayJS){
 
     const miliseconds = timestampDayJS.diff(nowDayjs, 'miliseconds') %1000;
+    
+    console.log("remaining miliseconds")
     return padWithZeros(miliseconds,3);
+
 }
 function getRemainingSeconds(nowDayjs, timestampDayJS){
     const seconds = timestampDayJS.diff(nowDayjs, 'seconds') %60;
+    console.log("remaining seconds")
     return padWithZeros(seconds,2);
+
+        
 }
 function getRemainingMinutes(nowDayjs, timestampDayJS){
     const minutes = timestampDayJS.diff(nowDayjs, 'minutes');
+    console.log("remaining minutes")
     return padWithZeros(minutes,2);
+
+        
 }
 
 function padWithZeros(number, minLength){
