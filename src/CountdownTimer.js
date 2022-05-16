@@ -12,7 +12,7 @@ const intervalRef = useRef(null);
 
 
 //Vores state for timeren.
-const [timer,setTimer] = useState("00:00:00");
+const [timer,setTimer] = useState("00.00");
 
 
 
@@ -21,25 +21,40 @@ const [timer,setTimer] = useState("00:00:00");
 function getTimeRemaining(endtime){
 
     
-    const total = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor((total/1000)%60);
-    const minutes = Math.floor((total/60)%60);
-    const hours = Math.floor((total/1000*60*60)%24);
+    const total = Date.parse(endtime) - new Date().getTime();
+    console.log(total);
+    
+    const seconds = 1000;
+    const minutes = seconds * 60;
+    const hours = minutes * 60;
+    const day = hours * 24;
+
+    // const textHour = Math.floor((total % day) / hours);
+    // const textMinute = Math.floor((total % hours) / minutes);
+    const textSecond = Math.floor((total % minutes) / seconds);
+    const textMilisecond = Math.floor((total%seconds)); 
+
+    console.log(textSecond);
+    
     
     return{
-        total, seconds, minutes, hours
+        total, textSecond, textMilisecond
     };
 }
 //opdaterer timeren og stopper den, når den når 0
 function startTimer(deadLine){
-    let {total, hours, minutes, seconds} = getTimeRemaining(deadLine);
+    let {total,textSecond,textMilisecond} = getTimeRemaining(deadLine);
+    if(total<0){
+        setTimer("00.000")
+    }
     if(total>=0){
-        //opdaterer timeren og tjekker om den er mindre end 10, så er vi nødt til at 
+        //opdaterer timeren og tjekker om den er større end 9, så er vi nødt til at 
         //tilføje et 0 i begyndelsen af variablen.
         setTimer(
-            (hours> 9 ? hours : '0'+hours) + ':' + 
-            (minutes > 9 ? minutes : '0'+minutes) + ':' + 
-            (seconds > 9 ? seconds : '0'+seconds)
+            // (textHour> 9 ? textHour : '0'+textHour) + ':' + 
+            // (textMinute > 9 ? textMinute : '0'+textMinute) + ':' + 
+            (textSecond > 9 ? textSecond : '0'+textSecond) + '.' + 
+            (textMilisecond > 9 ? textMilisecond : '0'+textMilisecond) 
         )
     }else{
         //We need to use useRef to let the parent component update its child component
@@ -50,11 +65,11 @@ function startTimer(deadLine){
 //restter timeren og starter fra start timeren
 //vi kan også kalde på den her metode hver gang at et nyt spil starter
 function clearTimer(endtime){
- setTimer('00:00:30');
+ setTimer('30.000');
  if(intervalRef.current) clearInterval(intervalRef.current);
  const id = setInterval(()=>{
     startTimer(endtime)
- },1000)
+ },100)
  intervalRef.current = id;
 }
 
@@ -81,13 +96,30 @@ function onClickResetBtn(){
 return (
     <div>
         {timer}
-      <button onClick={onClickResetBtn}>Reset</button>
+      <button onClick={onClickResetBtn}>Start Game</button>
     </div>
     
 )
 }
 
 export default CountdownTimerApp; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //We need to use useRef to let the parent component update its child component
 // export default function Counter(){
