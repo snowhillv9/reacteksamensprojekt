@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useState, useRef } from "react";
+import ButtonState from "./buttonAimTrainCounter";
 
 
 
 
-function CountdownTimerApp(){
+function CountdownTimerApp(props){
 
 
 
@@ -44,10 +45,13 @@ function getTimeRemaining(endtime){
 //opdaterer timeren og stopper den, når den når 0
 function startTimer(deadLine){
     let {total,textSecond,textMilisecond} = getTimeRemaining(deadLine);
+
     if(total<0){
         setTimer("00.000")
+        props.setCanBeClicked(false);
     }
     if(total>=0){
+        props.setCanBeClicked(true);
         //opdaterer timeren og tjekker om den er større end 9, så er vi nødt til at 
         //tilføje et 0 i begyndelsen af variablen.
         setTimer(
@@ -89,16 +93,24 @@ return() => {if(intervalRef.current) clearInterval(intervalRef.current)}
 function onClickResetBtn(){
     //Siden vi ikke ved om intervallet stadigvæk kører er vi nødt til at cleare det først.
     //Derfor er nedenstående linje meget vigtig for at undgå memory leak.
-    //Dette er også grunden til at det bliver gjort adskillige gange.
+    //Dette er også grunden til at det bliver gjort adskillige gange.'
+
+
+    props.resetTargetCounter();
     if(intervalRef.current) clearInterval(intervalRef.current);
-    clearTimer(getDeadlineTime());
+    clearTimer(getDeadlineTime()); 
+    
 }
+
 return (
+    
+    <div>
+        
+        <h4>Time Remaining:{timer}</h4> 
     <div>
 
-        <h4>Time Remaining:{timer}</h4>
-     
-      <button onClick={onClickResetBtn}>Start Game</button>
+      <button onClick={onClickResetBtn}>Reset Game</button>
+    </div>
     </div>
     
 )
@@ -123,70 +135,3 @@ export default CountdownTimerApp;
 
 
 
-//We need to use useRef to let the parent component update its child component
-// export default function Counter(){
-
-//     const[timer, setTimer] = useState("00:00");
-//     const[timeToUpdateTime, setUpdateTimer] = useState(new Date());
-
-//     useEffect(() =>{
-//         let currentTime = new Date();
-//         setTimer(currentTime.getTime() + 60);
-//     },[])
-//     let countDown = new Date();
-//     let timeRemaining = timer-countDown.getTime();
-
-//     function updateTime(){
-       
-//       setUpdateTimer(new Date());
-//     }
-
-//     return(
-//         <div>
-//             <p> Time left: {timeRemaining}</p>
-//         </div>
-//     )
-// }
-
-
-
-
-
-
-
-// const CountdownTimer =({countDownTimestampMS})=>{
-//     const[remainingTime, setRemainingTime] = useState(defaultRemainingTime);
-
-//     console.log("timer")
-
-//     useEffect(()=>{
-//     const intervalId = setInterval(() => {
-
-//         console.log("use effect kaldes")
-//         updateRemainingtime(countDownTimestampMS);
-//        },100); 
-
-//        return () => clearInterval(intervalId); //stopper en løbende interval funktion
-//     },[countDownTimestampMS]);
-
-
-
-//     function updateRemainingtime(countdown){
-//        setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
-
-       
-//     console.log(countdown)
-//     }
-//     return (
-//         <div className="countdown-timer">
-//             <span> {remainingTime.minutes} </span>
-//             <span> minutes </span>
-//             <span> {remainingTime.seconds} </span>
-//             <span> Seconds </span>
-//             <span> {remainingTime.miliseconds} </span>
-//             <span> miliseconds </span>
-//         </div>
-//     );
-// }
-
-// export default CountdownTimer;

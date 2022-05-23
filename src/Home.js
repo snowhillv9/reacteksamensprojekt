@@ -7,9 +7,7 @@ export default function Home(){
     return(
         <div>
             <h1>Profile
-            <ButtonState/>
             </h1>   
-           <CountdownTimerApp/>
         </div>
     )
 }

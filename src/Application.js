@@ -7,6 +7,7 @@ import Nav from "./nav";
 import {BrowserRouter, BrowserRouter as Router,Route,Link} from'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
+import Aimtrainer from "./Aimtrainer";
 import WatchWithHooks from "./watch";
 
 
@@ -26,6 +27,7 @@ const Application = () =>{
               <Route path="/Home" element={<Home/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Minigames" element={<Minigames/>} />
+              <Route path="/Aimtrainer" element={<Aimtrainer/>} />
               <Route path="/*" element={<ErrorPage/>} />
             </Routes>
             
