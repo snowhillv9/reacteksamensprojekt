@@ -3,6 +3,8 @@ import './Memory.css';
 import {useState} from "react";
 import {shuffle} from 'lodash';
 import Images from './Images';
+import "./Button.css"
+import { useNavigate } from 'react-router-dom';
 
 
 export default function MemoryGame(){
@@ -11,6 +13,7 @@ export default function MemoryGame(){
   const [won,setWon] = useState(false);
   const [activeCards,setActiveCards] = useState([]);
   const [foundPairs,setFoundPairs] = useState([]);
+  let navigate = useNavigate();
 
   function flipCard(index) {
     if (won) {
@@ -62,7 +65,7 @@ export default function MemoryGame(){
       <div className="stats">
         {won && (
           <>You won the game! Congratulations!<br />
-            Click any card to play again.<br /><br />
+            <button onClick={()=>{navigate("/Minigames")}}> Back to games </button>
           </>
         )}
         Clicks: {clicks} &nbsp;&nbsp;&nbsp; Found pairs:{foundPairs.length/2}
