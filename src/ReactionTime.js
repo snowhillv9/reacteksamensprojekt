@@ -6,6 +6,7 @@ import './ReactionTime.css';
 
     export default function ReactionTime()
 {
+
     function getRandomColor() {
 				
         var letters = "0123456789ABCDEF".split('');
@@ -35,7 +36,9 @@ import './ReactionTime.css';
                 
                     document.getElementById("box").style.borderRadius="0";
                 }
-                        
+                
+
+        
             document.getElementById("box").style.backgroundColor=getRandomColor();
         
             document.getElementById("box").style.display="block";
@@ -46,15 +49,15 @@ import './ReactionTime.css';
     
     }
     
-    document.getElementById("box").onclick=function() {
-        console.log ("123")
-
+    function handleClick() {
+        
+        console.log ("yes its works boi")
     
         clickedTime=Date.now();
         
         reactionTime=(clickedTime-createdTime)/1000;
         
-        document.getElementById("printReactionTime").innerHTML="Your Reaction Time is: " + reactionTime + "seconds";
+        document.getElementById("printReactionTime").innerHTML="Your Reaction Time is: " + reactionTime + " seconds";
         
         
         makeBox();
@@ -68,8 +71,14 @@ import './ReactionTime.css';
         <h1>
             <p>Click on the objects as fast as possible and get your reaction score</p>
             <p id="printReactionTime"></p>
-            <div id="box"></div>
+            <div id="box" onClick={handleClick}></div>
+            <div>
+            
+        </div>
+            
         </h1>
+        
+       
     )
 
 }
