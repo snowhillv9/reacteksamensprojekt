@@ -9,6 +9,10 @@ import { Routes } from 'react-router-dom';
 import ErrorPage from "./ErrorPage";
 import Aimtrainer from "./Aimtrainer";
 import WatchWithHooks from "./watch";
+import SequenceMemory from "./sequenceMemory";
+import MemoryGame from "./MemoryGame";
+import ReactionTime from "./ReactionTime";
+
 
 
 const Application = () =>{
@@ -28,6 +32,9 @@ const Application = () =>{
               <Route path="/About" element={<About/>} />
               <Route path="/Minigames" element={<Minigames/>} />
               <Route path="/Aimtrainer" element={<Aimtrainer/>} />
+              <Route path="/SequenceMemoryGame" element={<SequenceMemory/>} />
+              <Route path="/Reactiontime" element={<ReactionTime/>} />
+              <Route path="/MemoryGame" element={<MemoryGame/>} />
               <Route path="/*" element={<ErrorPage/>} />
             </Routes>
             

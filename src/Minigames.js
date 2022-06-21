@@ -10,10 +10,9 @@ export default function Minigames (){
         
         <div>
             <h1>Minigames</h1>
-            
-           
-            <div className='minigames'> 
-            <button onClick={()=>{navigate("/SequenceMemoryGame")}}>To enter the squence memory game click here </button></div>
+            <div> <button onClick={()=>{navigate("/SequenceMemoryGame")}}>To enter the squence memory game click here </button></div>
+            <div> <button onClick={()=>{navigate("/MemoryGame")}}> MemoryGame </button></div>
+            <div> <button onClick={()=>{navigate("/ReactionTime")}}> ReactionTime </button></div>
             <div className='button-grid'>
             <button >1</button>
             <button>2</button>
