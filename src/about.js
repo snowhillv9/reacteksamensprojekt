@@ -1,8 +1,7 @@
 import React from 'react';
-import Nav from "./nav";
 import "./about.css";
 import mig from "./mig.jpg";
-import Sami from "./Sami.jpg";
+import Sami from "../pictures/Sami.jpg";
 import Oscar from "./Oscar.jpg";
 
 
@@ -15,21 +14,21 @@ export default function About() {
              vil man kunne se de forskellige medlemmer   </p>
          <div className='gridbox'>  
          <div className="billedeAfSoren">
-         <img src={mig} width="200" height="150" />
+         <img src={mig} width="200" height="150" alt="" />
          <p> Søren Scheer Snoghøj</p>
           <p>TLF: +45 60682870</p>
           <p>Email: Sorensnoghoj@hotmail.com </p>
           </div>
           
           <div className='billedeAfSami'>
-            <img src={Sami} width="200" height="150" />
+            <img src={Sami} width="200" height="150" alt="" />
             <p> Sami Amir Assad</p>
           <p>TLF: +45 42212165</p>
           <p>Email: Sami.amir.assad@gmail.com</p>
             </div>
           
           <div className="billedeAfOscar">
-            <img src={Oscar} width="200" height="150"/>
+            <img src={Oscar} width="200" height="150" alt="" />
             <p>Oscar Kreie Olesen </p>
           <p>TLF: +45 30139984</p>
           <p>Email: Oscarkreie@gmail.com</p>
